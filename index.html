@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drill1</title>
+    <title>Q4 Drill1</title>
 </head>
 <body>
+
+    <input type="text" class="form-control" id="Electrical Consumption" placeholder="Input your consumption in kWh...">
+    <button class="btn btn-info" onclick="checkConsumption()">check Consumption</button>
+
+    <script>
+        function checkConsumption() {
+        var kWh = document.getElementById("Electrical Consumption").value;
+        let cat1 = "lifeline Consumer"
+        let cat2 = "Low Consumption Consumer"
+        let cat3 = "Average Consumer"
+        let cat4 = "High Consumption Consumer"
+        let cat5 = "Very High Consumption Consumer"
+            if (isNaN(kWh) || kWh <0) {
+                alert("Please enter a valid consumption.");
+            }
+            else if(kWh<100){
+                alert("You have Discounted electricity rates");
+            }
+           
+            else if(kWh>101 && kWh<200){
+                alert("You have the Normal residential rate");
+            }    
+                else if(kWh>201 && kWh<300){
+                    alert("You have the Typical electricity usage");
+                }    
+                else if(kWh>301 && kWh<500){
+                    alert("You have the High electricity usage");
+                }    
+                else if(kWh>500){
+                    alert("You have the VERY High electricity usage");
+                }
+           
+            else{
+                alert("Please enter a valid consumption.");
+            }
+        }
+    </script>
     
 </body>
 </html>
